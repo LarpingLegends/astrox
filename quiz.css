@@ -26,7 +26,7 @@ body {
   /* Arrière plan */
   background-color: #050505;
   background-image: url("https://t3.ftcdn.net/jpg/10/06/80/92/360_F_1006809248_lV05SpstvauPDRHJJAYDb8FckcokUE03.jpg");
-  background-size: auto;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
