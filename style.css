@@ -1590,7 +1590,7 @@ body {
 .panneau-depart {
   position: fixed;
   z-index: 20;
-  top: 96px;
+  top: 24px;
   left: 24px;
   display: flex;
   align-items: center;
