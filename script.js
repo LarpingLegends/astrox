@@ -1,4 +1,5 @@
 // Script de la page d'accueil : controles simples pour explorer les planetes.
+// source pour la barre de progression: https://www.youtube.com/watch?v=4LBRMSk6PLY
 window.onload = function () {
   var body = document.body;
   var universe = document.getElementById("universe");
