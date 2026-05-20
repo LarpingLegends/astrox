@@ -1588,7 +1588,7 @@ body {
 }
 
 .panneau-depart {
-  position: fixed;
+  position: absolute;
   z-index: 20;
   top: 24px;
   left: 24px;
