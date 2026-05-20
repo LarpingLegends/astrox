@@ -7,62 +7,41 @@ window.onload = function () {
   var boutonPlanetes = document.getElementById("toggle-data");
   var liensPlanetes = document.querySelectorAll("#data a");
 
-  afficherProgressionAccueil();
-
-  setTimeout(function () {
-    body.classList.remove("view-2D");
-    body.classList.remove("opening");
-    body.classList.add("view-3D");
-    body.classList.remove("hide-UI");
-    body.classList.add("set-speed");
-  }, 1200);
-
-  boutonPlanetes.onclick = function (evenement) {
-    evenement.preventDefault();
-    body.classList.toggle("data-open");
-    body.classList.toggle("data-close");
-  };
-
-  for (var i = 0; i < liensPlanetes.length; i++) {
-    liensPlanetes[i].onclick = function (evenement) {
-      evenement.preventDefault();
-
-      var planete = this.getAttribute("data-planete");
-
-      if (planete !== "sun") {
-        systemeSolaire.className = planete;
-      }
-
-      enleverClasseActive(liensPlanetes);
-      this.classList.add("active");
-    };
-  }
-
-  universe.className = "scale-stretched";
-};
-
-function enleverClasseActive(liens) {
-  for (var i = 0; i < liens.length; i++) {
-    liens[i].classList.remove("active");
-  }
-}
-
 function afficherProgressionAccueil() {
+  // Les 8 planètes des quiz
   var planetes = ["mercure", "venus", "terre", "mars", "jupiter", "saturne", "uranus", "neptune"];
+
+  // Le score total commence à 0
   var total = 0;
+
+  // 8 quiz x 5 points = 40 points maximum
   var maximum = 40;
+
+  // On prend les éléments HTML de la barre
   var rail = document.getElementById("railAccueil");
   var score = document.getElementById("scoreAccueil");
 
+  // Si la barre n'existe pas dans le HTML, on arrête la fonction
+  if (rail === null || score === null) {
+    return;
+  }
+
+  // On vérifie le score sauvegardé pour chaque planète
   for (var i = 0; i < planetes.length; i++) {
     var scorePlanete = localStorage.getItem("astrox_" + planetes[i]);
 
+    // Si un score existe, on l'ajoute au total
     if (scorePlanete !== null) {
-      total += parseInt(scorePlanete);
+      total = total + parseInt(scorePlanete);
     }
   }
 
+  // On transforme le score en pourcentage
   var pourcentage = Math.round((total / maximum) * 100);
+
+  // On change la largeur de la barre avec une variable CSS
   rail.style.setProperty("--progression", pourcentage + "%");
+
+  // On affiche le score, exemple : 23 / 40
   score.innerHTML = total + " / " + maximum;
 }
