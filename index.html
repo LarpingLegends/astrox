@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroX</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./astrox.png">
+</head>
+
+<body class="opening hide-UI view-3D zoom-close data-close controls-close">
+  <header id="navbar">
+    <a id="toggle-data" href="#data">Planètes</a>
+    <h1>
+      <img class="logo-navbar" src="./astrox.png" alt="AstroX">
+      <span>Jeu éducatif sur le système solaire</span>
+    </h1>
+    <a class="lien-tutoriel" href="./tutoriel.html">Tutoriel</a>
+  </header>
+
+  <nav id="data">
+    <a class="sun" data-planete="sun" title="Soleil" href="#sunspeed">Soleil</a>
+    <a class="mercury" data-planete="mercury" title="Mercure" href="#mercuryspeed">Mercure</a>
+    <a class="venus" data-planete="venus" title="Vénus" href="#venusspeed">Vénus</a>
+    <a class="earth active" data-planete="earth" title="Terre" href="#earthspeed">Terre</a>
+    <a class="mars" data-planete="mars" title="Mars" href="#marsspeed">Mars</a>
+    <a class="jupiter" data-planete="jupiter" title="Jupiter" href="#jupiterspeed">Jupiter</a>
+    <a class="saturn" data-planete="saturn" title="Saturne" href="#saturnspeed">Saturne</a>
+    <a class="uranus" data-planete="uranus" title="Uranus" href="#uranusspeed">Uranus</a>
+    <a class="neptune" data-planete="neptune" title="Neptune" href="#neptunespeed">Neptune</a>
+  </nav>
+
+  <section class="panneau-depart">
+    <img src="./astrox.png" alt="Logo AstroX">
+    <div>
+      <h2>Mission AstroX</h2>
+      <p>Lis le tutoriel, choisis une planète, puis fais les quiz pour faire monter la fusée.</p>
+      <a class="bouton-depart" href="./tutoriel.html">Lire le tutoriel</a>
+    </div>
+  </section>
+
+  <aside class="mission-progression" aria-label="Progression totale">
+    <h2>Progression</h2>
+    <div class="rail-accueil" id="railAccueil">
+      <div class="fusee-accueil"></div>
+    </div>
+    <p id="scoreAccueil">0 / 40</p>
+  </aside>
+
+  <div id="universe" class="scale-stretched">
+    <div id="galaxy">
+      <div id="solar-system" class="earth">
+        <div id="mercury" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./mercure.html">Quiz Mercure</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="venus" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./venus.html">Quiz Vénus</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="earth" class="orbit">
+          <div class="pos">
+            <div class="orbit">
+              <div class="pos">
+                <div class="moon"></div>
+              </div>
+            </div>
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./terre.html">Quiz Terre</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="mars" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./mars.html">Quiz Mars</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="jupiter" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./jupiter.html">Quiz Jupiter</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="saturn" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <div class="ring"></div>
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./saturne.html">Quiz Saturne</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="uranus" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./uranus.html">Quiz Uranus</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="neptune" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt><a class="bouton-quiz" href="./neptune.html">Quiz Neptune</a></dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="sun">
+          <dl class="infos">
+            <dt>Soleil</dt>
+            <dd><span></span></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

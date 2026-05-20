@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Mars - AstroX</title>
+  <link rel="stylesheet" href="./quiz.css">
+  <link rel="icon" type="image/png" href="./astrox.png">
+</head>
+<body class="page-quiz">
+  <main class="ecran-quiz">
+    <section class="zone-planete">
+      <nav class="navigation-secondaire">
+        <a class="petit-bouton" href="./index.html">Accueil</a>
+        <a class="petit-bouton" href="./tutoriel.html">Tutoriel</a>
+      </nav>
+      <div class="demi-planete planete-mars"></div>
+      <div class="nom-planete">Mars</div>
+    </section>
+
+    <section class="carte-quiz">
+      <div class="entete-quiz">
+        <img class="logo-astrox" src="./astrox.png" alt="Logo AstroX">
+        <div>
+          <h1 id="titreQuiz">Quiz</h1>
+          <p id="missionQuiz"></p>
+        </div>
+      </div>
+
+      <label class="ligne-nom">
+        Nom :
+        <input type="text" id="txtNom" placeholder="Entre ton nom">
+      </label>
+
+      <form id="formQuiz" data-planete="mars">
+        <div id="zoneQuestions"></div>
+        <div class="actions-quiz">
+          <button class="bouton-principal" type="button" id="btnSoumettre">Vérifier mes réponses</button>
+          <button class="bouton-secondaire" type="reset" id="btnRecommencer">Recommencer</button>
+        </div>
+      </form>
+
+      <h2 class="resultat" id="resultat"></h2>
+      <div class="corrections" id="corrections"></div>
+    </section>
+
+  </main>
+
+  <script src="./quiz.js"></script>
+</body>
+</html>
