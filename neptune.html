@@ -94,6 +94,9 @@ function calculerScore() {
 
   document.getElementById("resultat").innerHTML =
     nom + ", ton score est : " + score + " / 5";
+
+  localStorage.setItem("astrox_neptune", score);
+  
 }
 </script>
 
