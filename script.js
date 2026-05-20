@@ -55,13 +55,16 @@ function afficherProgressionAccueil() {
 
   for (var i = 0; i < planetes.length; i++) {
     var scorePlanete = localStorage.getItem("astrox_" + planetes[i]);
-
     if (scorePlanete !== null) {
       total += parseInt(scorePlanete);
     }
   }
 
   var pourcentage = Math.round((total / maximum) * 100);
-  rail.style.setProperty("--progression", pourcentage + "%");
-  score.innerHTML = total + " / " + maximum;
+
+  // Ces deux lignes font tout le travail :
+  // déplace fusée + gradient
+  rail.style.setProperty("--progression", pourcentage + "%"); 
+  // met à jour le score
+  score.textContent = total + " / " + maximum;                 
 }
