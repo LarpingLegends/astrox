@@ -23,17 +23,13 @@ body {
   align-items: center;
   justify-content: center;
 
+  /* Arrière plan */
   background-color: #050505;
-
-  /* Arrière-plan avec des étoiles créées en CSS */
-  background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#888 1px, transparent 1px);
-
-  /* Taille et position des étoiles */
-  background-size: 80px 80px, 130px 130px, 200px 200px;
-  background-position: 0 0, 40px 60px, 90px 30px;
+  background-image: url("1779317198193_image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Titre principal du quiz */
