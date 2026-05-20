@@ -1,0 +1,148 @@
+/*
+Sources utilisées :
+- MDN Web Docs : Centrer avec Flexbox grâce à justify-content et align-items
+  https://developer.mozilla.org/fr/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container
+
+- MDN Web Docs : Utiliser les dégradés CSS, comme radial-gradient()
+  https://developer.mozilla.org/fr/docs/Web/CSS/gradient/radial-gradient
+
+- MDN Web Docs : Utiliser box-shadow pour créer une ombre
+  https://developer.mozilla.org/fr/docs/Web/CSS/box-shadow
+*/
+
+/* Style général de la page */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f5f5;
+
+  /* Centre le contenu au milieu de l’écran */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #050505;
+
+  /* Arrière-plan avec des étoiles créées en CSS */
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#888 1px, transparent 1px);
+
+  /* Taille et position des étoiles */
+  background-size: 80px 80px, 130px 130px, 200px 200px;
+  background-position: 0 0, 40px 60px, 90px 30px;
+}
+
+/* Titre principal du quiz */
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Étiquette pour le nom */
+label {
+  font-weight: bold;
+  color: #eeeeee;
+}
+
+/* Boîte principale du quiz */
+form {
+  width: 90%;
+  max-width: 650px;
+  background-color: rgba(20, 20, 20, 0.92);
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+
+  /* Ombre autour de la boîte */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.18);
+}
+
+/* Style des questions */
+p {
+  font-weight: bold;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Champ de texte et menu déroulant */
+input[type="text"],
+select {
+  width: 90%;
+  max-width: 350px;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 15px;
+}
+
+/* Boutons radio et cases à cocher */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 8px 8px 8px 0;
+  cursor: pointer;
+}
+
+/* Bouton pour soumettre le quiz */
+button {
+  display: block;
+  margin: 25px auto 0 auto;
+  padding: 12px 28px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Animation simple quand la souris passe dessus */
+  transition: 0.25s;
+}
+
+/* Effet quand la souris passe sur le bouton */
+button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Texte du résultat */
+#resultat {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+/* Zone des corrections */
+#corrections {
+  width: 90%;
+  max-width: 650px;
+  margin-top: 15px;
+  text-align: center;
+  color: #dddddd;
+}
+
+/* Adaptation pour les petits écrans comme les téléphones */
+@media screen and (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
