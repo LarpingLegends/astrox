@@ -1,0 +1,146 @@
+/* === PAGE TUTORIEL === */
+
+body.page-tutoriel {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f5f5;
+  background-color: #050505;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#888 1px, transparent 1px);
+  background-size: 80px 80px, 130px 130px, 200px 200px;
+  background-position: 0 0, 40px 60px, 90px 30px;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Coquille principale */
+.coquille-tutoriel {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* En-tête avec logo et intro */
+.entete-tutoriel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(20, 20, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 18px;
+  padding: 20px 28px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.10);
+  margin-bottom: 2rem;
+}
+
+.logo-astrox {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.entete-tutoriel h1 {
+  color: white;
+  margin: 0 0 8px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.entete-tutoriel p {
+  font-size: 13px;
+  color: #cccccc;
+  margin: 4px 0;
+  font-weight: normal;
+}
+
+/* Grille 4 colonnes × 2 rangées */
+.grille-tutoriel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* Fiche de chaque planète */
+.fiche-planete {
+  background-color: rgba(20, 20, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fiche-planete h2 {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0 0 4px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  padding-bottom: 6px;
+}
+
+.fiche-planete p {
+  font-size: 12px;
+  color: #cccccc;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+/* Badge "À retenir" en bas de chaque fiche */
+.badge-lecture {
+  display: block;
+  margin-top: auto;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0 8px 8px 0;
+  font-size: 11px;
+  color: #eeeeee;
+  line-height: 1.4;
+}
+
+/* Bouton retour */
+.bouton-reponse {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.bouton-reponse:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Petits écrans : 2 colonnes */
+@media screen and (max-width: 800px) {
+  .grille-tutoriel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .entete-tutoriel {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Très petits écrans : 1 colonne */
+@media screen and (max-width: 480px) {
+  .grille-tutoriel {
+    grid-template-columns: 1fr;
+  }
+}
