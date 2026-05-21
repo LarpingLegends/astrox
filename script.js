@@ -1,4 +1,5 @@
 // Script de la page d'accueil : controles simples pour explorer les planetes.
+// Source: Julian Garnier, https://codepen.io/juliangarnier/pen/krNqZO
 window.onload = function () {
   var body = document.body;
   var universe = document.getElementById("universe");
