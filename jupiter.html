@@ -93,16 +93,17 @@
 		  }
 
 		  // Vérifie si leur score est bon ou mauvais
+		let message = "";
 		  if (score < 3) {
-			let message = "Étudie dans la page tutoriel!"
+			message = "Étudie dans la page tutoriel!"
 		  }
 
-		  if (score = 3) {
-			let message = "Vous êtes presque là!"
+		  if (score == 3) {
+			message = "Vous êtes presque là!"
 		  }
 
 		  if (score > 3) {
-			let message = "Bravo!"
+			message = "Bravo!"
 		  }
 
 		  document.getElementById("resultat").innerHTML =
