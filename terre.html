@@ -1,105 +1,142 @@
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Quiz Terre</title>
+  <!-- Feuille de style partagée par tous les quiz du projet AstroX -->
   <link rel="stylesheet" href="./quiz.css">
 </head>
 <body>
 
-<h1>Quiz sur la Terre</h1>
+  <h1>Quiz sur la Terre</h1>
 
-<form>
+  <form>
 
- <!-- Q1 -->
-  <p>1. Quelle caractéristique de la Terre permet à l'eau liquide d'exister en surface ?</p>
-  <input type="radio" id="q1_1" name="q1" value="0">Sa proximité avec Jupiter qui stabilise son orbite<br>
-  <input type="radio" id="q1_2" name="q1" value="1">Sa distance du Soleil place la Terre dans la zone habitable<br>
-  <input type="radio" id="q1_3" name="q1" value="0">Son noyau de fer qui chauffe constamment la surface<br>
-  <input type="radio" id="q1_4" name="q1" value="0">Sa vitesse de rotation qui empêche l'eau de geler<br>
-  <br>
-  <!-- Q2 -->
-  <p>2. Quelle proportion de la surface terrestre est couverte par les océans ?</p>
-  <select id="q2">
-    <option value="1">Environ 71 %</option>
-    <option value="0">Environ 45 %</option>
-    <option value="0">Environ 90 %</option>
-  </select><br><br>
-  <!-- Q3 -->
-  <p>3. Quelles affirmations sur la Terre sont exactes ? (2 réponses)</p>
-  <input type="checkbox" id="q3_1" name="q3" value="1">La Terre possède un champ magnétique qui la protège des vents solaires<br>
-  <input type="checkbox" id="q3_2" name="q3" value="1">La Lune stabilise l'inclinaison axiale de la Terre, ce qui régule le climat<br>
-  <input type="checkbox" id="q3_3" name="q3" value="0">La Terre est la planète avec la plus longue journée du système solaire<br>
-  <input type="checkbox" id="q3_4" name="q3" value="0">L'atmosphère terrestre est composée principalement de CO₂<br>
-  <br>
-  <!-- Q4 -->
-  <p>4. Quelles caractéristiques font de la Terre une planète unique ? (2 réponses)</p>
-  <input type="checkbox" id="q4_1" name="q4" value="1">C'est la seule planète connue à abriter de la vie<br>
-  <input type="checkbox" id="q4_2" name="q4" value="1">Sa tectonique des plaques recycle continuellement la croûte terrestre<br>
-  <input type="checkbox" id="q4_3" name="q4" value="0">Elle possède la plus grande lune du système solaire<br>
-  <input type="checkbox" id="q4_4" name="q4" value="0">Son atmosphère est la plus épaisse de toutes les planètes rocheuses<br>
-  <br>
-  <!-- Q5 -->
-  <p>5. Quelle affirmation sur la Terre est FAUSSE ?</p>
-  <input type="radio" id="q5_1" name="q5" value="0">L'atmosphère terrestre est composée principalement d'azote<br>
-  <input type="radio" id="q5_2" name="q5" value="0">La Terre est la plus dense des huit planètes du système solaire<br>
-  <input type="radio" id="q5_3" name="q5" value="0">La Terre met environ 365,25 jours pour orbiter autour du Soleil<br>
-  <input type="radio" id="q5_4" name="q5" value="1">La Terre est la troisième planète la plu
+    <!-- Q1 — Boutons radio : une seule réponse possible -->
+    <!-- La bonne réponse a value="1", les mauvaises ont value="0" -->
+    <p>1. Quelle caractéristique de la Terre permet à l'eau liquide d'exister en surface ?</p>
+    <input type="radio" id="q1_1" name="q1" value="0">Sa proximité avec Jupiter qui stabilise son orbite<br>
+    <input type="radio" id="q1_2" name="q1" value="1">Sa distance du Soleil place la Terre dans la zone habitable<br>  <!-- Bonne réponse -->
+    <input type="radio" id="q1_3" name="q1" value="0">Son noyau de fer qui chauffe constamment la surface<br>
+    <input type="radio" id="q1_4" name="q1" value="0">Sa vitesse de rotation qui empêche l'eau de geler<br>
+    <br>
 
-  <button type="button" onclick="calculerScore()">Soumettre</button>
+    <!-- Q2 — Menu déroulant : une seule réponse possible -->
+    <!-- Le JS lit la valeur sélectionnée et vérifie si elle vaut "1" -->
+    <p>2. Quelle proportion de la surface terrestre est couverte par les océans ?</p>
+    <select id="q2">
+      <option value="1">Environ 71 %</option>  <!-- Bonne réponse -->
+      <option value="0">Environ 45 %</option>
+      <option value="0">Environ 90 %</option>
+    </select><br><br>
 
-</form>
+    <!-- Q3 — Cases à cocher : deux bonnes réponses attendues -->
+    <!-- Le JS vérifie que q3_1 ET q3_2 sont cochées, -->
+    <!-- ET que q3_3 ET q3_4 ne sont PAS cochées -->
+    <p>3. Quelles affirmations sur la Terre sont exactes ? (2 réponses)</p>
+    <input type="checkbox" id="q3_1" name="q3" value="1">La Terre possède un champ magnétique qui la protège des vents solaires<br>  <!-- Bonne réponse -->
+    <input type="checkbox" id="q3_2" name="q3" value="1">La Lune stabilise l'inclinaison axiale de la Terre, ce qui régule le climat<br>  <!-- Bonne réponse -->
+    <input type="checkbox" id="q3_3" name="q3" value="0">La Terre est la planète avec la plus longue journée du système solaire<br>
+    <input type="checkbox" id="q3_4" name="q3" value="0">L'atmosphère terrestre est composée principalement de CO₂<br>
+    <br>
 
-<h2 id="resultat"></h2>
-<div id="corrections"></div>
+    <!-- Q4 — Cases à cocher : deux bonnes réponses attendues -->
+    <!-- Même logique que Q3 -->
+    <p>4. Quelles caractéristiques font de la Terre une planète unique ? (2 réponses)</p>
+    <input type="checkbox" id="q4_1" name="q4" value="1">C'est la seule planète connue à abriter de la vie<br>  <!-- Bonne réponse -->
+    <input type="checkbox" id="q4_2" name="q4" value="1">Sa tectonique des plaques recycle continuellement la croûte terrestre<br>  <!-- Bonne réponse -->
+    <input type="checkbox" id="q4_3" name="q4" value="0">Elle possède la plus grande lune du système solaire<br>
+    <input type="checkbox" id="q4_4" name="q4" value="0">Son atmosphère est la plus épaisse de toutes les planètes rocheuses<br>
+    <br>
 
-<script>
-function calculerScore() {
-  let score = 0;
-  let q2 = document.getElementById("q2").value;
+    <!-- Q5 — Boutons radio : trouver la seule affirmation FAUSSE -->
+    <!-- La bonne réponse (q5_4) a value="1" car c'est celle à -->
+    <!-- sélectionner pour obtenir le point -->
+    <p>5. Quelle affirmation sur la Terre est FAUSSE ?</p>
+    <input type="radio" id="q5_1" name="q5" value="0">L'atmosphère terrestre est composée principalement d'azote<br>
+    <input type="radio" id="q5_2" name="q5" value="0">La Terre est la plus dense des huit planètes du système solaire<br>
+    <input type="radio" id="q5_3" name="q5" value="0">La Terre met environ 365,25 jours pour orbiter autour du Soleil<br>
+    <input type="radio" id="q5_4" name="q5" value="1">La Terre est la troisième planète la plus grande du système solaire<br>  <!-- Bonne réponse -->
 
-  // Q1
-  if (document.getElementById("q1_2").checked) {
-    score++;
-  }
+    <!-- Bouton de soumission : appelle la fonction calculerScore() -->
+    <button type="button" onclick="calculerScore()">Soumettre</button>
 
-  // Q2
-  if (q2 === "1") {
-    score++;
-  }
+  </form>
 
-  // Q3
-  if (document.getElementById("q3_1").checked && document.getElementById("q3_2").checked && !document.getElementById("q3_3").checked && !document.getElementById("q3_4").checked) {
-    score++;
-  }
+  <!-- Zone où le score final est affiché après la soumission -->
+  <h2 id="resultat"></h2>
 
-  // Q4
-  if (document.getElementById("q4_1").checked && document.getElementById("q4_2").checked && !document.getElementById("q4_3").checked && !document.getElementById("q4_4").checked) {
-    score++;
-  }
+  <!-- Zone où le compte à rebours de redirection est affiché -->
+  <div id="corrections"></div>
 
-  // Q5
-  if (document.getElementById("q5_4").checked) {
-    score++;
-  }
+  <script>
+    function calculerScore() {
+      let score = 0;
 
-  document.getElementById("resultat").innerHTML =
-  "Élève, ton score est : " + score + " / 5";
+      // Récupère la valeur choisie dans le menu déroulant de Q2
+      let q2 = document.getElementById("q2").value;
 
-    localStorage.setItem("astrox_terre", score);
+      // Q1 — Vérifie si le bouton radio q1_2 (zone habitable) est coché
+      if (document.getElementById("q1_2").checked) {
+        score++;
+      }
 
-  let secondes = 3;
-  document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
-  let compte = setInterval(function () {
-    secondes--;
-    document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
-    if (secondes <= 0) {
-      clearInterval(compte);
-      window.location.href = "./index.html";
+      // Q2 — Vérifie si la valeur du menu déroulant est "1" (bonne réponse)
+      if (q2 === "1") {
+        score++;
+      }
+
+      // Q3 — Les deux bonnes cases doivent être cochées
+      //      et les deux mauvaises ne doivent pas l'être
+      if ( document.getElementById("q3_1").checked &&
+           document.getElementById("q3_2").checked &&
+          !document.getElementById("q3_3").checked &&
+          !document.getElementById("q3_4").checked) {
+        score++;
+      }
+
+      // Q4 — Même logique que Q3
+      if ( document.getElementById("q4_1").checked &&
+           document.getElementById("q4_2").checked &&
+          !document.getElementById("q4_3").checked &&
+          !document.getElementById("q4_4").checked) {
+        score++;
+      }
+
+      // Q5 — Vérifie si l'affirmation fausse (q5_4) a été identifiée
+      if (document.getElementById("q5_4").checked) {
+        score++;
+      }
+
+      // Affiche le score dans la balise h2 avec l'id "resultat"
+      document.getElementById("resultat").innerHTML =
+        "Élève, ton score est : " + score + " / 5";
+
+      // Sauvegarde le score dans le localStorage du navigateur
+      // Permet à la page d'accueil de lire ce score pour la barre de progression
+      localStorage.setItem("astrox_terre", score);
+
+      // Démarre un compte à rebours de 3 secondes avant de rediriger
+      let secondes = 3;
+      document.getElementById("corrections").innerHTML =
+        "Retour à l'accueil dans " + secondes + " secondes...";
+
+      // setInterval répète la fonction toutes les 1000 ms (1 seconde)
+      let compte = setInterval(function () {
+        secondes--;
+
+        // Met à jour le texte du compte à rebours à chaque seconde
+        document.getElementById("corrections").innerHTML =
+          "Retour à l'accueil dans " + secondes + " secondes...";
+
+        // Quand le compteur atteint 0, on arrête l'intervalle et on redirige
+        if (secondes <= 0) {
+          clearInterval(compte);
+          window.location.href = "./index.html";
+        }
+      }, 1000);
     }
-  }, 1000);
-}
-</script>
+  </script>
 
 </body>
 </html>
