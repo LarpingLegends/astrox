@@ -57,12 +57,7 @@
 <script>
 function calculerScore() {
   let score = 0;
-  let nom = document.getElementById("txtNom").value;
   let q2 = document.getElementById("q2").value;
-
-  if (nom === "") {
-    nom = "Élève";
-  }
 
   // Q1
   if (document.getElementById("q1_1").checked) {
@@ -90,7 +85,7 @@ function calculerScore() {
   }
 
   document.getElementById("resultat").innerHTML =
-    nom + ", ton score est : " + score + " / 5";
+  "Élève, ton score est : " + score + " / 5";
 
   localStorage.setItem("astrox_uranus", score);
   
