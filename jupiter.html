@@ -91,24 +91,10 @@
 		  if (document.getElementById("q5_4").checked) {
 			score++;
 		  }
-
-		  // Vérifie si leur score est bon ou mauvais
-		let message = "";
-		  if (score < 3) {
-			message = "Étudie dans la page tutoriel!"
-		  }
-
-		  if (score == 3) {
-			message = "Vous êtes presque là!"
-		  }
-
-		  if (score > 3) {
-			message = "Bravo!"
-		  }
-
-		  document.getElementById("resultat").innerHTML =
-  			nom + ", ton score est : " + score + " / 5<br>" + message;
-
+			
+		document.getElementById("resultat").innerHTML =
+    nom + ", ton score est : " + score + " / 5";
+			
 			localStorage.setItem("astrox_jupiter", score);
 			
 		}
