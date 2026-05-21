@@ -97,6 +97,16 @@ function calculerScore() {
 
   localStorage.setItem("astrox_uranus", score);
   
+  let secondes = 3;
+  document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
+  let compte = setInterval(function () {
+  secondes--;
+  document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
+  if (secondes <= 0) {
+    clearInterval(compte);
+    window.location.href = "./index.html";
+  }
+}, 1000);
 }
 </script>
 
