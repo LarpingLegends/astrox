@@ -12,40 +12,39 @@
 <form>
 
   <!-- Q1 -->
-  <p>1. Pourquoi Mercure a-t-elle des températures extrêmes ?</p>
-  <input type="radio" id="q1_1" name="q1" value="0">Elle est couverte d’eau<br>
-  <input type="radio" id="q1_2" name="q1" value="1">Elle n’a presque pas d’atmosphère<br>
-  <input type="radio" id="q1_3" name="q1" value="0">Elle est très loin du Soleil<br>
-  <input type="radio" id="q1_4" name="q1" value="0">Elle produit sa propre chaleur<br>
+  <p>1. Malgré sa proximité avec le Soleil, pourquoi Mercure n'est-elle pas la planète la plus chaude ?</p>
+  <input type="radio" id="q1_1" name="q1" value="0">Elle est couverte de glace qui réfléchit la chaleur<br>
+  <input type="radio" id="q1_2" name="q1" value="1">Son absence d'atmosphère empêche de retenir la chaleur<br>
+  <input type="radio" id="q1_3" name="q1" value="0">Elle tourne trop vite autour du Soleil<br>
+  <input type="radio" id="q1_4" name="q1" value="0">Sa surface sombre absorbe trop peu de rayons solaires<br>
   <br>
   <!-- Q2 -->
-  <p>2. Combien dure une année sur Mercure ?</p>
+  <p>2. Sur Mercure, un jour solaire (lever au lever du Soleil) dure plus longtemps qu'une année. Combien dure une année mercurienne ?</p>
   <select id="q2">
-    <option value="0">500 jours</option>
-    <option value="1">88 jours</option>
-    <option value="0">366 jours</option>
+    <option value="0">224 jours terrestres</option>
+    <option value="1">88 jours terrestres</option>
+    <option value="0">176 jours terrestres</option>
   </select><br><br>
   <!-- Q3 -->
-  <p>3. Quelles affirmations sont vraies ? (2 réponses)</p>
-  <input type="checkbox" id="q3_1" name="q3" value="1">Plus proche du Soleil<br>
-  <input type="checkbox" id="q3_2" name="q3" value="1">Surface cratérisée<br>
-  <input type="checkbox" id="q3_3" name="q3" value="0">Océans liquides<br>
-  <input type="checkbox" id="q3_4" name="q3" value="0">Atmosphère épaisse<br>
+  <p>3. Quelles affirmations sur Mercure sont exactes ? (2 réponses)</p>
+  <input type="checkbox" id="q3_1" name="q3" value="1">Elle est la planète la plus proche du Soleil<br>
+  <input type="checkbox" id="q3_2" name="q3" value="1">Sa surface est couverte de cratères d'impact<br>
+  <input type="checkbox" id="q3_3" name="q3" value="0">Elle possède deux lunes nommées Phobos et Deimos<br>
+  <input type="checkbox" id="q3_4" name="q3" value="0">Son atmosphère est riche en azote comme celle de la Terre<br>
   <br>
   <!-- Q4 -->
-  <p>4. Pourquoi Mercure est-elle cratérisée ?</p>
-  <input type="checkbox" id="q4_1" name="q4" value="1">Impacts de météorites<br>
-  <input type="checkbox" id="q4_2" name="q4" value="0">Volcans actifs<br>
-  <input type="checkbox" id="q4_3" name="q4" value="0">Vent<br>
-  <input type="checkbox" id="q4_4" name="q4" value="0">Pluie<br>
+  <p>4. Quelle est la principale raison pour laquelle Mercure est autant cratérisée ?</p>
+  <input type="checkbox" id="q4_1" name="q4" value="1">L'absence d'atmosphère laisse les météorites atteindre la surface sans brûler<br>
+  <input type="checkbox" id="q4_2" name="q4" value="0">Une activité volcanique intense qui déforme le sol<br>
+  <input type="checkbox" id="q4_3" name="q4" value="0">Des tempêtes de vent qui érodent la roche en cratères<br>
+  <input type="checkbox" id="q4_4" name="q4" value="0">La forte gravité qui attire les débris spatiaux en grand nombre<br>
   <br>
   <!-- Q5 -->
-  <p>5. Mercure a-t-elle une atmosphère ?</p>
-  <input type="radio" id="q5_1" name="q5" value="1">Non, presque inexistante<br>
-  <input type="radio" id="q5_2" name="q5" value="0">Oui, comme la Terre<br>
-  <input type="radio" id="q5_3" name="q5" value="0">Oui, pleine d’oxygène<br>
-  <input type="radio" id="q5_4" name="q5" value="0">Oui, très épaisse<br>
-  <br>
+  <p>5. Quelle affirmation décrit correctement l'atmosphère de Mercure ?</p>
+  <input type="radio" id="q5_1" name="q5" value="1">Elle est quasi inexistante, ce qui cause des écarts de température extrêmes<br>
+  <input type="radio" id="q5_2" name="q5" value="0">Elle est similaire à celle de la Terre, avec de l'azote et de l'oxygène<br>
+  <input type="radio" id="q5_3" name="q5" value="0">Elle est épaisse et composée principalement de CO₂ comme Vénus<br>
+  <input type="radio" id="q5_4" name="q5" value="0">Elle protège la surface des rayonnements solaires efficacement<br>
 
   <button type="button" onclick="calculerScore()">Soumettre</button>
 
