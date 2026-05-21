@@ -62,42 +62,38 @@ function calculerScore() {
   let score = 0;
   let nom = document.getElementById("txtNom").value;
   let q2 = document.getElementById("q2").value;
-
   if (nom === "") {
     nom = "Élève";
   }
-
-  // Q1
   if (document.getElementById("q1_1").checked) {
     score++;
   }
-
-  // Q2
   if (q2 === "1") {
     score++;
   }
-
-  // Q3
   if (document.getElementById("q3_1").checked && document.getElementById("q3_2").checked && !document.getElementById("q3_3").checked && !document.getElementById("q3_4").checked) {
     score++;
   }
-
-  // Q4
   if (document.getElementById("q4_1").checked && document.getElementById("q4_2").checked && !document.getElementById("q4_3").checked && !document.getElementById("q4_4").checked) {
     score++;
   }
-
-  // Q5
   if (document.getElementById("q5_4").checked) {
     score++;
   }
-
-  document.getElementById("resultat").innerHTML =
-    nom + ", ton score est : " + score + " / 5";
-
+  document.getElementById("resultat").innerHTML = nom + ", ton score est : " + score + " / 5";
   localStorage.setItem("astrox_venus", score);
+
+  let secondes = 3;
+  document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
+  let compte = setInterval(function () {
+    secondes--;
+    document.getElementById("corrections").innerHTML = "Retour à l'accueil dans " + secondes + " secondes...";
+    if (secondes <= 0) {
+      clearInterval(compte);
+      window.location.href = "./index.html";
+    }
+  }, 1000);
 }
-  
 </script>
 
 </body>
